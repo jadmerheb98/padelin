@@ -306,15 +306,15 @@ button {
 @media (max-width: 768px) {
 
   .nav-links {
-    gap: 12px;
+    gap: 14px;
   }
 
   .nav-links a {
-    font-size: 11px;
+    font-size: 14px;
   }
 
   .logo img {
-    height: 35px;
+    height: 32px;
   }
 
 }
