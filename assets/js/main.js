@@ -14,4 +14,13 @@ document.addEventListener("DOMContentLoaded", function () {
     menu.classList.remove("show");
   });
 
+const menuToggle = document.querySelector(".menu-toggle");
+const navLinks = document.querySelector(".nav-links");
+
+if (menuToggle) {
+  menuToggle.addEventListener("click", function () {
+    navLinks.classList.toggle("show");
+  });
+}
+
 });
