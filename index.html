@@ -8,31 +8,29 @@
 </head>
 <body>
 
-<header class="header">
-  <div class="nav-container">
-
-    <!-- Logo -->
+<header class="navbar">
+  <div class="container nav-container">
+    
     <a href="index.html" class="logo">
       <img src="assets/images/logo.png" alt="Padelin Logo">
     </a>
+  <button class="menu-toggle">☰</button>
 
-    <!-- Main Nav (Always Visible) -->
-    <ul class="main-nav">
-      <li><a href="index.html">Home</a></li>
-      <li><a href="reserve.html">Reserve</a></li>
-      <li><a href="login.html">Login</a></li>
-    </ul>
+    <ul class="nav-links">
+  <li><a href="index.html">Home</a></li>
+  <li><a href="reservation.html">Reserve</a></li>
 
-    <!-- Hamburger -->
-    <button class="menu-toggle">☰</button>
+<li class="dropdown">
+  <a class="dropdown-toggle">Play ▾</a>
+  <ul class="dropdown-menu">
+    <li><a href="reservation.html">Reserve</a></li>
+    <li><a href="#">Membership</a></li>
+  </ul>
+</li>
 
-  </div>
+  <li><a href="login.html">Login</a></li>
+</ul>
 
-  <!-- Slide Menu -->
-  <div class="side-menu">
-    <a href="membership.html">Membership</a>
-    <a href="play.html">Play</a>
-    <!-- Add more here if needed -->
   </div>
 </header>
 
