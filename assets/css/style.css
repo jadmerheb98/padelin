@@ -420,15 +420,8 @@ tr:hover {
     font-size: 13px;
   }
 }
-/* ================================
-   DROPDOWN FIXED VERSION
-================================ */
 
-.nav-links {
-  display: flex;
-  align-items: center;
-  gap: 25px;
-}
+/* DROPDOWN CLEAN VERSION */
 
 .dropdown {
   position: relative;
@@ -436,23 +429,32 @@ tr:hover {
 
 .dropdown-menu {
   position: absolute;
-  top: 45px;
+  top: 100%;
   left: 0;
   background: #0f172a;
   list-style: none;
-  padding: 8px 0;
+  padding: 0;
   margin: 0;
-  display: none;
-  min-width: 170px;
+  min-width: 180px;
   border-radius: 8px;
   box-shadow: 0 8px 20px rgba(0,0,0,0.2);
-  z-index: 999;
+  display: none;
+  flex-direction: column;
 }
 
 .dropdown-menu li {
-  padding: 8px 15px
+  padding: 10px 15px;
 }
 
-.dropdown-menu.show {
+.dropdown-menu li a {
+  color: white;
   display: block;
+}
+
+.dropdown-menu li:hover {
+  background: #1e293b;
+}
+
+.dropdown:hover .dropdown-menu {
+  display: flex;
 }
