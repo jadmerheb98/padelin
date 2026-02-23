@@ -22,5 +22,10 @@ if (menuToggle) {
     navLinks.classList.toggle("show");
   });
 }
+const toggle = document.querySelector(".menu-toggle");
+const sideMenu = document.querySelector(".side-menu");
 
+toggle.addEventListener("click", () => {
+  sideMenu.classList.toggle("show");
+});
 });
