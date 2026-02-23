@@ -1,0 +1,458 @@
+html, body {
+  overflow-x: hidden;
+  width: 100%;
+}
+/* ================================
+   PADELIN - GLOBAL STYLES
+================================ */
+
+:root {
+  --primary-blue: #3F6696;
+  --dark-bg: #0f172a;
+  --light-bg: #f8fafc;
+  --gray: #8C8C8C;
+  --danger: #dc2626;
+  --success: #16a34a;
+  --warning: #f59e0b;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Segoe UI', sans-serif;
+}
+
+body {
+  background-color: var(--light-bg);
+  color: #111;
+  line-height: 1.6;
+}
+
+h1, h2, h3 {
+  text-transform: uppercase;
+  font-weight: 800;
+  letter-spacing: 1px;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+button {
+  cursor: pointer;
+  border: none;
+}
+
+.container {
+  width: 90%;
+  max-width: 1200px;
+  margin: auto;
+}
+
+/* ================================
+   NAVBAR (CLEAN VERSION)
+================================ */
+
+.navbar {
+  background: var(--dark-bg);
+  padding: 15px 0;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  width: 100%;
+}
+
+.nav-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 90%;
+  max-width: 1200px;
+  margin: auto;
+}
+
+.logo img {
+  height: 40px;
+}
+
+.nav-links {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.nav-links li {
+  list-style: none;
+}
+
+.nav-links a {
+  color: white;
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 15px;
+  white-space: nowrap;
+  transition: 0.3s;
+}
+
+.nav-links a:hover {
+  color: var(--primary-blue);
+}
+
+/* ================================
+   MOBILE FIX
+================================ */
+
+@media (max-width: 768px) {
+
+  .nav-container {
+    width: 95%;
+  }
+
+  .logo img {
+    height: 32px;
+  }
+
+  .nav-links {
+    gap: 12px;
+  }
+
+  .nav-links a {
+    font-size: 13px;
+  }
+}
+/* ================================
+   HERO SECTION
+================================ */
+
+.hero {
+  background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)),
+              url('../images/hero.jpg') center/cover no-repeat;
+  color: white;
+  height: 90vh;
+  display: flex;
+  align-items: center;
+  text-align: center;
+}
+
+.hero h1 {
+  font-size: 3rem;
+}
+
+.hero p {
+  margin: 20px 0;
+  font-size: 1.2rem;
+}
+
+.btn-primary {
+  background: var(--primary-blue);
+  padding: 12px 25px;
+  color: white;
+  border-radius: 5px;
+  font-weight: bold;
+  transition: 0.3s;
+}
+
+.btn-primary:hover {
+  background: #2e4d73;
+}
+
+/* ================================
+   SECTION
+================================ */
+
+.section {
+  padding: 60px 0;
+}
+
+.section-dark {
+  background: var(--dark-bg);
+  color: white;
+}
+
+/* ================================
+   BOOKING TABLE
+================================ */
+
+.booking-table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.booking-table th,
+.booking-table td {
+  border: 1px solid #ddd;
+  padding: 8px;
+  text-align: center;
+}
+
+.slot-available {
+  background-color: white;
+}
+
+.slot-pending {
+  background-color: var(--warning);
+  color: white;
+}
+
+.slot-confirmed {
+  background-color: var(--danger);
+  color: white;
+}
+
+.slot-blocked {
+  background-color: gray;
+  color: white;
+}
+
+.slot-selected {
+  background-color: var(--primary-blue);
+  color: white;
+}
+
+/* ================================
+   FOOTER
+================================ */
+
+.footer {
+  background: var(--dark-bg);
+  color: white;
+  padding: 40px 0;
+  text-align: center;
+}
+.booking-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 20px;
+}
+
+.booking-table th,
+.booking-table td {
+  border: 1px solid #ddd;
+  padding: 10px;
+  text-align: center;
+}
+
+.slot {
+  cursor: pointer;
+  background: #f4f4f4;
+}
+
+.slot:hover {
+  background: #3b6ea8;
+  color: white;
+}
+
+.selected {
+  background: #1d3557 !important;
+  color: white;
+}
+
+.taken {
+  background: #d9534f;
+  color: white;
+  cursor: not-allowed;
+}
+
+.confirm-btn {
+  margin-top: 20px;
+  width: 100%;
+}
+
+/* ================================
+   DATE NAVIGATION (NEW STYLE)
+================================ */
+
+.date-navigation {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 30px;
+  margin: 40px 0;
+}
+
+.arrow-btn {
+  width: 45px;
+  height: 45px;
+  border-radius: 50%;
+  border: none;
+  background: var(--primary-blue);
+  color: white;
+  font-size: 24px;
+  font-weight: bold;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.3s ease;
+}
+
+.arrow-btn:hover {
+  background: #2e4d73;
+  transform: scale(1.1);
+}
+
+#currentDate {
+  font-size: 20px;
+  font-weight: 700;
+}
+/* ================================
+   MOBILE NAV FIX
+================================ */
+
+@media (max-width: 768px) {
+
+  .nav-links {
+    gap: 12px;
+  }
+
+  .nav-links a {
+    font-size: 11px;
+  }
+
+  .logo img {
+    height: 35px;
+  }
+
+}
+header {
+  width: 100%;
+  max-width: 100%;
+  overflow: hidden;
+}
+/* ================================
+   TABLE WIDTH FIX
+================================ */
+
+table {
+  width: 100%;
+  table-layout: fixed;
+}
+
+th, td {
+  word-wrap: break-word;
+}
+/* ================================
+   RESERVATION TITLE
+================================ */
+
+.reserve-title {
+  text-align: center;
+  font-size: 36px;
+  font-weight: 700;
+  margin: 40px 0 30px;
+  letter-spacing: 1px;
+}
+
+@media (max-width: 768px) {
+  .reserve-title {
+    font-size: 28px;
+  }
+}
+/* ================================
+   RESERVATION TABLE DESIGN
+================================ */
+
+.booking-container {
+  width: 95%;
+  max-width: 1000px;
+  margin: 0 auto 60px;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  background: white;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.08);
+}
+
+th {
+  background: var(--dark-bg);
+  color: white;
+  padding: 14px;
+  font-weight: 600;
+}
+
+td {
+  padding: 14px;
+  text-align: center;
+  border-bottom: 1px solid #eee;
+}
+
+tr:hover {
+  background: #f8fafc;
+}
+
+.slot {
+  cursor: pointer;
+  transition: 0.2s;
+}
+
+.slot:hover {
+  background: #e2e8f0;
+}
+
+.selected {
+  background: var(--primary-blue) !important;
+  color: white;
+}
+
+.taken {
+  background: #ddd;
+  cursor: not-allowed;
+}
+
+.booking-table th,
+.booking-table td {
+  padding: 10px;
+  font-size: 14px;
+}
+
+@media (max-width: 768px) {
+  .booking-table th,
+  .booking-table td {
+    padding: 8px;
+    font-size: 13px;
+  }
+}
+/* ================================
+   DROPDOWN FIXED VERSION
+================================ */
+
+.nav-links {
+  display: flex;
+  align-items: center;
+  gap: 25px;
+}
+
+.dropdown {
+  position: relative;
+}
+
+.dropdown-menu {
+  position: absolute;
+  top: 45px;
+  left: 0;
+  background: #0f172a;
+  list-style: none;
+  padding: 8px 0;
+  margin: 0;
+  display: none;
+  min-width: 170px;
+  border-radius: 8px;
+  box-shadow: 0 8px 20px rgba(0,0,0,0.2);
+  z-index: 999;
+}
+
+.dropdown-menu li {
+  padding: 8px 15px
+}
+
+.dropdown-menu.show {
+  display: block;
+}
