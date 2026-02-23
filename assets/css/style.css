@@ -68,9 +68,9 @@ button {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  width: 90%;
+  padding: 0 18px;   /* ← THIS adds clean left/right space */
   max-width: 1200px;
-  margin: auto;
+  margin: 0 auto;
 }
 
 .logo img {
@@ -103,28 +103,6 @@ button {
   color: var(--primary-blue);
 }
 
-/* ================================
-   MOBILE FIX
-================================ */
-
-@media (max-width: 768px) {
-
-  .nav-container {
-    width: 95%;
-  }
-
-  .logo img {
-    height: 32px;
-  }
-
-  .nav-links {
-    gap: 12px;
-  }
-
-  .nav-links a {
-    font-size: 13px;
-  }
-}
 /* ================================
    HERO SECTION
 ================================ */
@@ -454,6 +432,6 @@ tr:hover {
   background: #1e293b;
 }
 
-.dropdown:hover .dropdown-menu {
+.dropdown-menu.show {
   display: flex;
 }
