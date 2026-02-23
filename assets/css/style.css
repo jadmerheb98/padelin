@@ -60,13 +60,16 @@ button {
    NAVBAR
 ======================================== */
 
+/* ===== NEW SPORT HEADER ===== */
+
 .navbar {
-  background: var(--dark-bg);
-  padding: 15px 0;
+  background: linear-gradient(90deg, #0f172a 0%, #111c34 100%);
+  padding: 10px 0;
   position: sticky;
   top: 0;
   z-index: 1000;
   width: 100%;
+  border-bottom: 2px solid var(--primary-blue);
 }
 
 .nav-container {
@@ -79,7 +82,12 @@ button {
 }
 
 .logo img {
-  height: 35px;
+  height: 32px;
+  transition: 0.3s ease;
+}
+
+.logo img:hover {
+  transform: scale(1.05);
 }
 
 .nav-links {
@@ -92,9 +100,26 @@ button {
 .nav-links a {
   color: white;
   font-weight: 600;
-  font-size: 15px;
-  white-space: nowrap;
-  transition: 0.3s;
+  font-size: 14px;
+  letter-spacing: 0.5px;
+  position: relative;
+  padding: 5px 0;
+  transition: 0.3s ease;
+}
+
+.nav-links a::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -3px;
+  width: 0%;
+  height: 2px;
+  background: var(--primary-blue);
+  transition: width 0.3s ease;
+}
+
+.nav-links a:hover::after {
+  width: 100%;
 }
 
 .nav-links a:hover {
