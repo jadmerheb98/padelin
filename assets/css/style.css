@@ -1,10 +1,6 @@
-html, body {
-  overflow-x: hidden;
-  width: 100%;
-}
-/* ================================
-   PADELIN - GLOBAL STYLES
-================================ */
+/* ========================================
+   PADELIN - CLEAN GLOBAL STYLES
+======================================== */
 
 :root {
   --primary-blue: #3F6696;
@@ -16,11 +12,18 @@ html, body {
   --warning: #f59e0b;
 }
 
+/* ===== RESET ===== */
+
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
   font-family: 'Segoe UI', sans-serif;
+}
+
+html, body {
+  width: 100%;
+  overflow-x: hidden;
 }
 
 body {
@@ -45,15 +48,17 @@ button {
   border: none;
 }
 
+/* ===== CONTAINER ===== */
+
 .container {
   width: 90%;
   max-width: 1200px;
-  margin: auto;
+  margin: 0 auto;
 }
 
-/* ================================
-   NAVBAR (CLEAN VERSION)
-================================ */
+/* ========================================
+   NAVBAR
+======================================== */
 
 .navbar {
   background: var(--dark-bg);
@@ -68,7 +73,7 @@ button {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 0 18px;   /* ← THIS adds clean left/right space */
+  padding: 0 18px;
   max-width: 1200px;
   margin: 0 auto;
 }
@@ -82,17 +87,10 @@ button {
   align-items: center;
   gap: 20px;
   list-style: none;
-  padding: 0;
-  margin: 0;
-}
-
-.nav-links li {
-  list-style: none;
 }
 
 .nav-links a {
   color: white;
-  text-decoration: none;
   font-weight: 600;
   font-size: 15px;
   white-space: nowrap;
@@ -103,9 +101,47 @@ button {
   color: var(--primary-blue);
 }
 
-/* ================================
+/* ===== DROPDOWN ===== */
+
+.dropdown {
+  position: relative;
+}
+
+.dropdown-menu {
+  position: absolute;
+  top: 100%;
+  right: 0;
+  background: var(--dark-bg);
+  list-style: none;
+  padding: 8px 0;
+  min-width: 180px;
+  border-radius: 8px;
+  box-shadow: 0 8px 20px rgba(0,0,0,0.3);
+  display: none;
+  flex-direction: column;
+  z-index: 999;
+}
+
+.dropdown-menu li {
+  padding: 10px 18px;
+}
+
+.dropdown-menu li a {
+  color: white;
+  font-weight: 500;
+}
+
+.dropdown-menu li:hover {
+  background: #1e293b;
+}
+
+.dropdown-menu.show {
+  display: flex;
+}
+
+/* ========================================
    HERO SECTION
-================================ */
+======================================== */
 
 .hero {
   background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)),
@@ -139,9 +175,9 @@ button {
   background: #2e4d73;
 }
 
-/* ================================
-   SECTION
-================================ */
+/* ========================================
+   SECTIONS
+======================================== */
 
 .section {
   padding: 60px 0;
@@ -152,98 +188,20 @@ button {
   color: white;
 }
 
-/* ================================
-   BOOKING TABLE
-================================ */
+/* ========================================
+   RESERVATION TITLE
+======================================== */
 
-.booking-table {
-  width: 100%;
-  border-collapse: collapse;
-}
-
-.booking-table th,
-.booking-table td {
-  border: 1px solid #ddd;
-  padding: 8px;
+.reserve-title {
   text-align: center;
+  font-size: 36px;
+  font-weight: 700;
+  margin: 40px 0 30px;
 }
 
-.slot-available {
-  background-color: white;
-}
-
-.slot-pending {
-  background-color: var(--warning);
-  color: white;
-}
-
-.slot-confirmed {
-  background-color: var(--danger);
-  color: white;
-}
-
-.slot-blocked {
-  background-color: gray;
-  color: white;
-}
-
-.slot-selected {
-  background-color: var(--primary-blue);
-  color: white;
-}
-
-/* ================================
-   FOOTER
-================================ */
-
-.footer {
-  background: var(--dark-bg);
-  color: white;
-  padding: 40px 0;
-  text-align: center;
-}
-.booking-table {
-  width: 100%;
-  border-collapse: collapse;
-  margin-top: 20px;
-}
-
-.booking-table th,
-.booking-table td {
-  border: 1px solid #ddd;
-  padding: 10px;
-  text-align: center;
-}
-
-.slot {
-  cursor: pointer;
-  background: #f4f4f4;
-}
-
-.slot:hover {
-  background: #3b6ea8;
-  color: white;
-}
-
-.selected {
-  background: #1d3557 !important;
-  color: white;
-}
-
-.taken {
-  background: #d9534f;
-  color: white;
-  cursor: not-allowed;
-}
-
-.confirm-btn {
-  margin-top: 20px;
-  width: 100%;
-}
-
-/* ================================
-   DATE NAVIGATION (NEW STYLE)
-================================ */
+/* ========================================
+   DATE NAVIGATION
+======================================== */
 
 .date-navigation {
   display: flex;
@@ -257,7 +215,6 @@ button {
   width: 45px;
   height: 45px;
   border-radius: 50%;
-  border: none;
   background: var(--primary-blue);
   color: white;
   font-size: 24px;
@@ -265,7 +222,7 @@ button {
   display: flex;
   align-items: center;
   justify-content: center;
-  transition: all 0.3s ease;
+  transition: 0.3s;
 }
 
 .arrow-btn:hover {
@@ -277,62 +234,10 @@ button {
   font-size: 20px;
   font-weight: 700;
 }
-/* ================================
-   MOBILE NAV FIX
-================================ */
 
-@media (max-width: 768px) {
-
-  .nav-links {
-    gap: 14px;
-  }
-
-  .nav-links a {
-    font-size: 14px;
-  }
-
-  .logo img {
-    height: 32px;
-  }
-
-}
-header {
-  width: 100%;
-  max-width: 100%;
-  overflow: hidden;
-}
-/* ================================
-   TABLE WIDTH FIX
-================================ */
-
-table {
-  width: 100%;
-  table-layout: fixed;
-}
-
-th, td {
-  word-wrap: break-word;
-}
-/* ================================
-   RESERVATION TITLE
-================================ */
-
-.reserve-title {
-  text-align: center;
-  font-size: 36px;
-  font-weight: 700;
-  margin: 40px 0 30px;
-  letter-spacing: 1px;
-}
-
-@media (max-width: 768px) {
-  .reserve-title {
-    font-size: 28px;
-  }
-}
-/* ================================
-   RESERVATION TABLE DESIGN
-================================ */
+/* ========================================
+   BOOKING TABLE
+======================================== */
 
 .booking-container {
   width: 95%;
@@ -340,7 +245,7 @@ th, td {
   margin: 0 auto 60px;
 }
 
-table {
+.booking-table {
   width: 100%;
   border-collapse: collapse;
   background: white;
@@ -349,22 +254,25 @@ table {
   box-shadow: 0 10px 30px rgba(0,0,0,0.08);
 }
 
-th {
+.booking-table th {
   background: var(--dark-bg);
   color: white;
   padding: 14px;
   font-weight: 600;
 }
 
-td {
+.booking-table td {
   padding: 14px;
   text-align: center;
   border-bottom: 1px solid #eee;
+  font-size: 14px;
 }
 
-tr:hover {
+.booking-table tr:hover {
   background: #f8fafc;
 }
+
+/* ===== SLOT STATES ===== */
 
 .slot {
   cursor: pointer;
@@ -385,53 +293,52 @@ tr:hover {
   cursor: not-allowed;
 }
 
-.booking-table th,
-.booking-table td {
-  padding: 10px;
-  font-size: 14px;
+/* ========================================
+   CONFIRM BUTTON
+======================================== */
+
+.confirm-btn {
+  margin-top: 20px;
+  width: 100%;
 }
 
+/* ========================================
+   FOOTER
+======================================== */
+
+.footer {
+  background: var(--dark-bg);
+  color: white;
+  padding: 40px 0;
+  text-align: center;
+}
+
+/* ========================================
+   RESPONSIVE
+======================================== */
+
 @media (max-width: 768px) {
+
+  .logo img {
+    height: 32px;
+  }
+
+  .nav-links {
+    gap: 14px;
+  }
+
+  .nav-links a {
+    font-size: 14px;
+  }
+
+  .reserve-title {
+    font-size: 28px;
+  }
+
   .booking-table th,
   .booking-table td {
     padding: 8px;
     font-size: 13px;
   }
-}
-/* DROPDOWN CLEAN FIX */
 
-.dropdown {
-  position: relative;
-}
-
-.dropdown-menu {
-  position: absolute;
-  top: 100%;
-  right: 0;        /* aligns nicely to Play */
-  background: #0f172a;
-  list-style: none;
-  padding: 8px 0;
-  margin: 0;
-  min-width: 180px;
-  border-radius: 8px;
-  box-shadow: 0 8px 20px rgba(0,0,0,0.3);
-  display: none;
-  flex-direction: column;
-}
-
-.dropdown-menu li {
-  padding: 10px 18px;
-}
-
-.dropdown-menu li a {
-  color: white;
-  font-weight: 500;
-}
-
-.dropdown-menu li:hover {
-  background: #1e293b;
-}
-
-.dropdown-menu.show {
-  display: flex;
 }
