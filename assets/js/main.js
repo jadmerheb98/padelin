@@ -1,18 +1,17 @@
 document.addEventListener("DOMContentLoaded", function () {
-  const dropdown = document.querySelector(".dropdown");
-  if (!dropdown) return;
 
-  const toggle = dropdown.querySelector("a");
-  const menu = dropdown.querySelector(".dropdown-menu");
+  const toggle = document.querySelector(".dropdown-toggle");
+  const menu = document.querySelector(".dropdown-menu");
+
+  if (!toggle || !menu) return;
 
   toggle.addEventListener("click", function (e) {
-    e.preventDefault();
+    e.stopPropagation();
     menu.classList.toggle("show");
   });
 
-  document.addEventListener("click", function (e) {
-    if (!dropdown.contains(e.target)) {
-      menu.classList.remove("show");
-    }
+  document.addEventListener("click", function () {
+    menu.classList.remove("show");
   });
+
 });
