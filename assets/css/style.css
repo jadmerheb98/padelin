@@ -369,3 +369,36 @@ button {
   }
 
 }
+/* ===== MOBILE MENU ===== */
+
+.menu-toggle {
+  display: none;
+  font-size: 24px;
+  background: none;
+  color: white;
+}
+
+@media (max-width: 768px) {
+
+  .menu-toggle {
+    display: block;
+  }
+
+  .nav-links {
+    position: absolute;
+    top: 100%;
+    right: 0;
+    background: #111c34;
+    flex-direction: column;
+    width: 200px;
+    padding: 20px;
+    gap: 18px;
+    display: none;
+    border-radius: 10px;
+  }
+
+  .nav-links.show {
+    display: flex;
+  }
+
+}
